@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RoastWire
+
+A modern real-time communication platform built for communities and teams. RoastWire provides seamless messaging experiences with support for group rooms, private conversations, and comprehensive administrative tools.
+
+## Features
+
+- **Real-time Messaging** - Instant message delivery powered by WebSocket connections
+- **Rooms** - Create and join public or private rooms for group discussions
+- **Direct Messages** - Private one-on-one conversations between users
+- **Admin Controls** - Full moderation capabilities including user management, role assignments, and content moderation
+- **User Authentication** - Secure sign-up and login system
+- **Role-based Permissions** - Granular control over user capabilities within rooms
+- **Message History** - Persistent message storage and retrieval
+- **Online Presence** - Real-time user status indicators
+
+## Tech Stack
+
+- Next.js
+- Socket.io
+- Prisma
+- MySQL
+- Tailwind CSS
+
+## Prerequisites
+
+- Node.js 18.x or higher
+- MySQL 8.x or higher
+- npm, yarn, or pnpm
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/namans4ini/RoastWire.git
+cd roastwire
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Set up environment variables
+
+Create a `.env` file in the root directory:
+
+```env
+DATABASE_URL="mysql://user:password@localhost:3306/roastwire"
+NEXTAUTH_SECRET="your-secret-key"
+NEXTAUTH_URL="http://localhost:3000"
+```
+
+### 4. Initialize the database
+
+```bash
+npx prisma migrate dev
+npx prisma generate
+```
+
+### 5. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+roastwire/
+├── app/                  # Next.js App Router
+├── components/           # Reusable UI components
+├── lib/                  # Utility functions and configurations
+├── prisma/               # Database schema and migrations
+├── public/               # Static assets
+├── socket/               # Socket.io server and handlers
+└── types/                # TypeScript type definitions
+```
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+| Command             | Description              |
+| ------------------- | ------------------------ |
+| `npm run dev`       | Start development server |
+| `npm run build`     | Build for production     |
+| `npm run start`     | Start production server  |
+| `npm run lint`      | Run ESLint               |
+| `npx prisma studio` | Open Prisma database GUI |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contributions are welcome. Please open an issue or submit a pull request for any improvements.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License.
