@@ -1,5 +1,5 @@
 {
-  "name": "Void",
+  "name": "void",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,8 @@
   "dependencies": {
     "@clerk/nextjs": "^6.37.3",
     "@clerk/themes": "^2.4.51",
+    "@prisma/adapter-mariadb": "^7.4.0",
+    "@prisma/client": "^7.4.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.563.0",
